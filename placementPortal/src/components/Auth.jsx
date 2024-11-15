@@ -1,5 +1,6 @@
 import React ,{useState}from 'react'
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 function Auth() {
   const [error, setError] = useState('');
@@ -28,7 +29,7 @@ function Auth() {
         // }
         setError('');
         try {
-          const response = await axios.post('http://localhost:8080/placement/register', formData);
+          const response = await axios.post('http://localhost:8080/register', formData);
           console.log(response.data);
         } catch (error) {
           console.error('Error registering user:', error);
@@ -43,8 +44,8 @@ function Auth() {
           <label className="block text-sm font-medium text-gray-700">Username</label>
           <input
             type="text"
-            name="name"
-            value={formData.name}
+            name="username"
+            value={formData.username}
             onChange={handleChange}
             className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
             required
@@ -106,6 +107,11 @@ function Auth() {
           </button>
         </div>
       </form>
+      <div className='flex justify-end space-x-2'>
+        <h2>Already registered ? </h2>
+        <Link to="/login"><button className='text-blue-600 font-semibold hover:text-inherit'>Login</button></Link>
+        
+      </div>
     </div>
     </div>
   )

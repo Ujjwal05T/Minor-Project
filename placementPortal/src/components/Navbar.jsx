@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import logo from "../assets/Designer__1_-removebg-preview (1).png";
 
 function Navbar() {
@@ -25,7 +26,7 @@ function Navbar() {
             tabIndex={0}
             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
             <li>
-              <a>Home</a>
+              <Link to='/'>Home</Link>
             </li>
             <li>
               <a>Jobs</a>
@@ -51,7 +52,7 @@ function Navbar() {
       <div className="navbar-center hidden lg:flex font-bold">
         <ul className="menu menu-horizontal px-1">
           <li>
-            <a>Home</a>
+          <Link to='/'>Home</Link>
           </li>
           <li>
             <details>
