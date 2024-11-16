@@ -39,7 +39,7 @@ function Auth() {
     <div>
   <div className="max-w-md mx-auto mt-10">
       <h2 className="text-2xl font-bold mb-6 text-center">Register</h2>
-      <form onSubmit={handleSubmit} className="space-y-4">
+      <form onSubmit={handleSubmit} className="space-y-4 mx-3">
         <div>
           <label className="block text-sm font-medium text-gray-700">Username</label>
           <input
@@ -107,7 +107,7 @@ function Auth() {
           </button>
         </div>
       </form>
-      <div className='flex justify-end space-x-2'>
+      <div className='flex justify-end space-x-2 mr-4'>
         <h2>Already registered ? </h2>
         <Link to="/login"><button className='text-blue-600 font-semibold hover:text-inherit'>Login</button></Link>
         

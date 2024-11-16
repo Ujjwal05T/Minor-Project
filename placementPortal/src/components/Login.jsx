@@ -34,7 +34,7 @@ function Login() {
   return (
     <div className="max-w-md mx-auto mt-10">
       <h2 className="text-2xl font-bold mb-6 text-center">Login</h2>
-      <form onSubmit={handleSubmit} className="space-y-4">
+      <form onSubmit={handleSubmit} className="space-y-4 mx-3">
         <div>
           <label className="block text-sm font-medium text-gray-700">Email</label>
           <input
@@ -67,7 +67,7 @@ function Login() {
           </button>
         </div>
       </form>
-      <div className='flex justify-end space-x-2'>
+      <div className='flex justify-end space-x-2 mr-4'>
         <h2>New User? </h2>
         <Link to="/register"><button className='text-blue-600 font-semibold hover:text-inherit'>Register</button></Link>
         
