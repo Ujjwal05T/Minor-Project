@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import img from "../assets/blog_1587144918.jpg";
+import {motion} from "framer-motion";
 
 
 function Home() {
@@ -56,11 +57,20 @@ function Home() {
       <div>
         <div className="text-center mt-8">
             <h1 className="font-semibold text-2xl">Our Recruiters</h1>
-            <div className="flex flex-wrap justify-center md:justify-evenly font-semibold text-2xl mt-4 mb-16 space-x-4 space-y-6 mx-4 lg:mx-[100px]">
+            <div className="flex flex-wrap justify-center md:justify-evenly font-semibold text-2xl mt-4 mb-16 space-x-4 space-y-6 mx-2 lg:mx-[100px] ">
               <div className="hidden">   
               </div>
             {recruiters.map((src, index) => (
-              <img key={index} src={src} alt={`Recruiter ${index + 1}`} className="bg-white shadow-lg rounded p-2" />
+              <motion.img
+              key={index}
+              src={src}
+              alt={`Recruiter ${index + 1}`}
+              className="bg-white shadow-lg rounded p-2 glow-on-hover"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: 2 * 0.1 }}
+              whileHover={{ scale: 1.05 }}
+            />
             ))}
           </div>
         </div>

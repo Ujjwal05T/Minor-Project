@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState ,useEffect} from 'react'
 
 import './App.css'
 import Navbar from './components/Navbar'
@@ -7,20 +7,34 @@ import Jobs from './components/Jobs'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Auth from './components/Auth'
 import Login from './components/Login'
+import Loading from './components/Loading'
 
 function App() {
   const [count, setCount] = useState(0)
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // Simulate a loading delay
+    setTimeout(() => {
+      setLoading(false);
+    }, 3000); // Adjust the delay as needed
+  }, []);
+
+  
+
 
   return (
     <>
     <Router>
       <Navbar/>
-      <Routes>
+      { loading ? <Loading /> : 
+        <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/register" element={<Auth />} />
       <Route path="/login" element={<Login />} />
       <Route path="/jobs" element={<Jobs />} />
       </Routes>
+      }
     </Router>
     </>
   )
