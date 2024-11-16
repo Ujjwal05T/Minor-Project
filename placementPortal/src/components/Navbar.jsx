@@ -35,7 +35,7 @@ function Navbar() {
             <Link to='/jobs'>Jobs</Link>
             </li>
             <li>
-              <a>Item </a>
+            <Link to='/admin'>Admin</Link>
             </li>
           </ul>
         </div>
@@ -53,7 +53,10 @@ function Navbar() {
           <Link to='/jobs'>Jobs</Link>
           </li>
           <li>
-            <a>Item 3</a>
+            <Link to='/admin'>Admin</Link>
+          </li>
+          <li>
+            <Link to='/practice'>Practice</Link>
           </li>
         </ul>
       </div>

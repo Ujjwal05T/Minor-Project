@@ -8,6 +8,8 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Auth from './components/Auth'
 import Login from './components/Login'
 import Loading from './components/Loading'
+import AdminPanel from './components/AdminPanel'
+import Practice from './components/Practice'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -33,6 +35,8 @@ function App() {
       <Route path="/register" element={<Auth />} />
       <Route path="/login" element={<Login />} />
       <Route path="/jobs" element={<Jobs />} />
+      <Route path="/admin" element={<AdminPanel />} />
+      <Route path="/practice" element={<Practice />} />
       </Routes>
       }
     </Router>
