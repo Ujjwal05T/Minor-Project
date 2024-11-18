@@ -37,11 +37,11 @@ function Auth() {
       };
   return (
     <div>
-  <div className="max-w-md mx-auto mt-10">
+  <div className="max-w-md mx-auto mt-10 md:shadow-lg rounded-lg bg-inherit p-3 py-6">
       <h2 className="text-2xl font-bold mb-6 text-center">Register</h2>
       <form onSubmit={handleSubmit} className="space-y-4 mx-3">
         <div>
-          <label className="block text-sm font-medium text-gray-700">Username</label>
+          <label className="block text-sm font-medium ">Username</label>
           <input
             type="text"
             name="username"
@@ -52,7 +52,7 @@ function Auth() {
           />
         </div>
         <div>
-          <label className="block text-sm font-medium text-gray-700">Email</label>
+          <label className="block text-sm font-medium ">Email</label>
           <input
             type="email"
             name="email"
@@ -63,7 +63,7 @@ function Auth() {
           />
         </div>
         <div>
-          <label className="block text-sm font-medium text-gray-700">Role</label>
+          <label className="block text-sm font-medium ">Role</label>
           <select
             name="role"
             value={formData.role}
@@ -77,7 +77,7 @@ function Auth() {
           </select>
         </div>
         <div>
-          <label className="block text-sm font-medium text-gray-700">Password</label>
+          <label className="block text-sm font-medium ">Password</label>
           <input
             type="password"
             name="password"

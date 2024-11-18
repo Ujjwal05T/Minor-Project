@@ -36,10 +36,10 @@ function AdminPanel() {
   return (
     <div className="container mx-auto p-4 ">
       <h1 className="text-3xl font-bold text-center mb-8">Admin Dashboard</h1>
-      <div className="flex flex-wrap justify-center">
-      <form onSubmit={handleSubmit} className="space-y-4 lg:w-[60%]">
+      <div className="flex md:flex-wrap md:justify-center">
+      <form onSubmit={handleSubmit} className="space-y-4 w-full mx-2 md:w-[60%]">
         <div>
-          <label className="block text-sm font-medium text-gray-500">Job Title</label>
+          <label className="block text-sm font-medium ">Job Title</label>
           <input
             type="text"
             name="jobTitle"
@@ -50,7 +50,7 @@ function AdminPanel() {
           />
         </div>
         <div>
-          <label className="block text-sm font-medium text-gray-500">Company Name</label>
+          <label className="block text-sm font-medium ">Company Name</label>
           <input
             type="text"
             name="companyName"
@@ -61,7 +61,7 @@ function AdminPanel() {
           />
         </div>
         <div>
-          <label className="block text-sm font-medium text-gray-500">Description</label>
+          <label className="block text-sm font-medium">Description</label>
           <textarea
             name="description"
             value={formData.description}
@@ -70,19 +70,9 @@ function AdminPanel() {
             required
           />
         </div>
+        
         <div>
-          <label className="block text-sm font-medium text-gray-500">Apply Date</label>
-          <input
-            type="date"
-            name="applyDate"
-            value={formData.applyDate}
-            onChange={handleChange}
-            className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-            required
-          />
-        </div>
-        <div>
-          <label className="block text-sm font-medium text-gray-500">Last Date</label>
+          <label className="block text-sm font-medium ">Last Date</label>
           <input
             type="date"
             name="lastDate"
@@ -93,7 +83,7 @@ function AdminPanel() {
           />
         </div>
         <div>
-          <label className="block text-sm font-medium text-gray-500">Apply Link</label>
+          <label className="block text-sm font-medium">Apply Link</label>
           <input
             type="url"
             name="applyLink"
@@ -113,7 +103,7 @@ function AdminPanel() {
         </div>
       </form>
       </div>
-      <div className="mt-8 flex flex-wrap justify-center">
+      <div className="mt-8 flex md:flex-wrap md:justify-center">
         <h2 className="text-2xl font-bold mb-4">Posted Jobs</h2>
         <ul>
           {jobs.map((job, index) => (

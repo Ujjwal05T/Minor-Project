@@ -4,10 +4,10 @@ import logo from "../assets/Designer__1_-removebg-preview (1).png";
 
 function Navbar() {
   return (
-    <div className="navbar  bg-[#00757F] text-gray-300">
+    <div className="navbar  bg-[#00757F] ">
       <div className="navbar-start">
         <div className="dropdown">
-          <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+          <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden text-gray-300 ">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5"
@@ -24,7 +24,7 @@ function Navbar() {
           </div>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+            className="menu menu-md dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
               <li>
                 <Link to="/register">Register/Login</Link>
               </li>
@@ -37,14 +37,17 @@ function Navbar() {
             <li>
             <Link to='/admin'>Admin</Link>
             </li>
+            <li>
+            <Link to='/practice'>Practice</Link>
+          </li>
           </ul>
         </div>
         <div className="h-auto w-12 text-white font-bold">
             <img src={logo} alt="" />
         </div>
-        <a className="btn btn-ghost text-xl hidden lg:inline-flex">Placement Portal</a>
+        <a className="btn btn-ghost text-xl hidden lg:inline-flex text-gray-300">Placement Portal</a>
       </div>
-      <div className="navbar-center hidden lg:flex font-bold">
+      <div className="navbar-center hidden lg:flex font-bold text-gray-300">
         <ul className="menu menu-horizontal px-1">
           <li>
           <Link to='/'>Home</Link>
@@ -60,10 +63,10 @@ function Navbar() {
           </li>
         </ul>
       </div>
-      <div className="navbar-end">
+      <div className="navbar-end text-gray-300">
       <label className="swap swap-rotate">
   {/* this hidden checkbox controls the state */}
-  <input type="checkbox" className="theme-controller" value="winter" />
+  <input type="checkbox" className="theme-controller " value="winter" />
 
   {/* sun icon */}
   <svg

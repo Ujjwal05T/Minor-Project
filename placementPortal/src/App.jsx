@@ -28,9 +28,13 @@ function App() {
   return (
     <>
     <Router>
-      <Navbar/>
+      
       { loading ? <Loading /> : 
+      <>
+     
+      <Navbar/>
         <Routes>
+          
       <Route path="/" element={<Home />} />
       <Route path="/register" element={<Auth />} />
       <Route path="/login" element={<Login />} />
@@ -38,6 +42,7 @@ function App() {
       <Route path="/admin" element={<AdminPanel />} />
       <Route path="/practice" element={<Practice />} />
       </Routes>
+      </>
       }
     </Router>
     </>
