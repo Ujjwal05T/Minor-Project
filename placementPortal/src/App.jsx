@@ -10,6 +10,7 @@ import Login from './components/Login'
 import Loading from './components/Loading'
 import AdminPanel from './components/AdminPanel'
 import Practice from './components/Practice'
+import ProtectedRoute from './components/ProtectedRoute'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -38,8 +39,9 @@ function App() {
       <Route path="/" element={<Home />} />
       <Route path="/register" element={<Auth />} />
       <Route path="/login" element={<Login />} />
+      {/* <Route path="/jobs" element={<ProtectedRoute><Jobs /></ProtectedRoute>} /> */}
       <Route path="/jobs" element={<Jobs />} />
-      <Route path="/admin" element={<AdminPanel />} />
+      <Route path="/admin" element={<AdminPanel /> } />
       <Route path="/practice" element={<Practice />} />
       </Routes>
       </>

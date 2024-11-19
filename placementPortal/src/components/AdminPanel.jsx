@@ -1,16 +1,19 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 
 function AdminPanel() {
   const [formData, setFormData] = useState({
-    jobTitle: '',
-    companyName: '',
+    title: '',
+    company_name: '',
     description: '',
-    applyDate: '',
-    lastDate: '',
-    applyLink: ''
+    last_date: '',
+    apply_link: '',
+    salary:0
   });
 
   const [jobs, setJobs] = useState([]);
+  const [error, setError] = useState(null);
+  const [success, setSuccess] = useState(null);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -20,17 +23,26 @@ function AdminPanel() {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setJobs([...jobs, formData]);
-    setFormData({
-      jobTitle: '',
-      companyName: '',
-      description: '',
-      applyDate: '',
-      lastDate: '',
-      applyLink: ''
-    });
+    setError(null);
+    setSuccess(null);
+    try {
+      const response = await axios.post('http://localhost:8080/jobs', formData);
+      setJobs([...jobs, response.data]);
+      setFormData({
+        title: '',
+        company_name: '',
+        description: '',
+        last_date: '',
+        apply_link: '',
+        salary:0
+      });
+      setSuccess('Job posted successfully!');
+    } catch (error) {
+      console.error('Error posting job:', error);
+      setError('Failed to post job. Please try again later.');
+    }
   };
 
   return (
@@ -42,8 +54,8 @@ function AdminPanel() {
           <label className="block text-sm font-medium ">Job Title</label>
           <input
             type="text"
-            name="jobTitle"
-            value={formData.jobTitle}
+            name="title"
+            value={formData.title}
             onChange={handleChange}
             className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
             required
@@ -53,8 +65,8 @@ function AdminPanel() {
           <label className="block text-sm font-medium ">Company Name</label>
           <input
             type="text"
-            name="companyName"
-            value={formData.companyName}
+            name="company_name"
+            value={formData.company_name}
             onChange={handleChange}
             className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
             required
@@ -75,8 +87,19 @@ function AdminPanel() {
           <label className="block text-sm font-medium ">Last Date</label>
           <input
             type="date"
-            name="lastDate"
-            value={formData.lastDate}
+            name="last_date"
+            value={formData.last_date}
+            onChange={handleChange}
+            className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+            required
+          />
+        </div>
+        <div>
+          <label className="block text-sm font-medium ">Salary offered</label>
+          <input
+            type="integer"
+            name="salary"
+            value={formData.salary}
             onChange={handleChange}
             className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
             required
@@ -85,9 +108,9 @@ function AdminPanel() {
         <div>
           <label className="block text-sm font-medium">Apply Link</label>
           <input
-            type="url"
-            name="applyLink"
-            value={formData.applyLink}
+            type="text"
+            name="apply_link"
+            value={formData.apply_link}
             onChange={handleChange}
             className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
             required
@@ -102,21 +125,6 @@ function AdminPanel() {
           </button>
         </div>
       </form>
-      </div>
-      <div className="mt-8 flex md:flex-wrap md:justify-center">
-        <h2 className="text-2xl font-bold mb-4">Posted Jobs</h2>
-        <ul>
-          {jobs.map((job, index) => (
-            <li key={index} className="mb-4 p-4 border border-gray-300 rounded-md shadow-sm">
-              <h3 className="text-xl font-semibold">{job.jobTitle}</h3>
-              <p><strong>Company:</strong> {job.companyName}</p>
-              <p><strong>Description:</strong> {job.description}</p>
-              <p><strong>Apply Date:</strong> {job.applyDate}</p>
-              <p><strong>Last Date:</strong> {job.lastDate}</p>
-              <p><strong>Apply Link:</strong> <a href={job.applyLink} target="_blank" rel="noopener noreferrer" className="text-blue-500">{job.applyLink}</a></p>
-            </li>
-          ))}
-        </ul>
       </div>
     </div>
   );

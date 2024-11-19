@@ -2,22 +2,10 @@ import React from "react";
 import { Link } from "react-router-dom";
 import img from "../assets/blog_1587144918.jpg";
 import {motion} from "framer-motion";
+import { recruiters } from "../index";
 
 
 function Home() {
-
-  const recruiters = [
-    "https://www.spmcollege.ac.in/images/logos/Amazon.png",
-    "https://www.spmcollege.ac.in/images/logos/birla.png",
-    "https://www.spmcollege.ac.in/images/logos/deloitte.png",
-    "https://www.spmcollege.ac.in/images/logos/tata.png",
-    "https://www.spmcollege.ac.in/images/logos/wipro.png",
-    "https://www.spmcollege.ac.in/images/logos/infosys.png",
-    "https://www.spmcollege.ac.in/images/logos/reliance-trends.png",
-    "https://www.spmcollege.ac.in/images/logos/larsen-tourbro.png",
-    "https://www.spmcollege.ac.in/images/logos/dxc.png",
-    "https://www.spmcollege.ac.in/images/logos/accenture.png"
-  ];
 
   return (
     <>

@@ -1,102 +1,45 @@
-export const jobs = [
+  export const recruiters = [
+    "https://www.spmcollege.ac.in/images/logos/Amazon.png",
+    "https://www.spmcollege.ac.in/images/logos/birla.png",
+    "https://www.spmcollege.ac.in/images/logos/deloitte.png",
+    "https://www.spmcollege.ac.in/images/logos/tata.png",
+    "https://www.spmcollege.ac.in/images/logos/wipro.png",
+    "https://www.spmcollege.ac.in/images/logos/infosys.png",
+    "https://www.spmcollege.ac.in/images/logos/reliance-trends.png",
+    "https://www.spmcollege.ac.in/images/logos/larsen-tourbro.png",
+    "https://www.spmcollege.ac.in/images/logos/dxc.png",
+    "https://www.spmcollege.ac.in/images/logos/accenture.png"
+  ];
+
+  export const materials = [
     {
-      id: 1,
-      title: 'Software Engineer',
-      company: 'Tech Corp',
-      location: 'San Francisco, CA',
-      salary: '$120,000',
-      description: 'Develop and maintain web applications.',
-      requirements: ['JavaScript', 'React', 'Node.js'],
-      posted_date: '2023-10-01'
+      title: 'DSA Sheet by Love Babbar',
+      description: 'A comprehensive DSA sheet to prepare for coding interviews.',
+      link: 'https://drive.google.com/file/d/1KOj8g4z5k5z5k5z5k5z5k5z5k5z5k5z/view',
+      type: 'DSA Sheet'
     },
     {
-      id: 2,
-      title: 'Data Scientist',
-      company: 'Data Inc.',
-      location: 'New York, NY',
-      salary: '$110,000',
-      description: 'Analyze and interpret complex data sets.',
-      requirements: ['Python', 'Machine Learning', 'Statistics'],
-      posted_date: '2023-09-15'
+      title: 'Striver\'s SDE Sheet',
+      description: 'A curated list of problems to ace coding interviews.',
+      link: 'https://takeuforward.org/interviews/strivers-sde-sheet-top-coding-interview-problems/',
+      type: 'DSA Sheet'
     },
     {
-      id: 3,
-      title: 'Product Manager',
-      company: 'Innovate LLC',
-      location: 'Austin, TX',
-      salary: '$130,000',
-      description: 'Lead product development teams to success.',
-      requirements: ['Product Management', 'Agile', 'Scrum'],
-      posted_date: '2023-08-20'
+      title: 'YouTube Playlist: Data Structures and Algorithms',
+      description: 'A YouTube playlist covering various data structures and algorithms.',
+      link: 'https://www.youtube.com/playlist?list=PL9gnSGHSqcnp39cTyB1dTZ2pJ04Xmdrod',
+      type: 'YouTube Playlist'
     },
     {
-      id: 4,
-      title: 'UX Designer',
-      company: 'Creative Solutions',
-      location: 'Seattle, WA',
-      salary: '$100,000',
-      description: 'Design user-friendly interfaces for web and mobile applications.',
-      requirements: ['UX Design', 'Figma', 'Adobe XD'],
-      posted_date: '2023-07-30'
+      title: 'GeeksforGeeks Placement Preparation',
+      description: 'A collection of articles and problems for placement preparation.',
+      link: 'https://www.geeksforgeeks.org/placement-preparation/',
+      type: 'Article'
     },
     {
-      id: 5,
-      title: 'DevOps Engineer',
-      company: 'CloudWorks',
-      location: 'Denver, CO',
-      salary: '$115,000',
-      description: 'Implement and manage CI/CD pipelines.',
-      requirements: ['AWS', 'Docker', 'Kubernetes'],
-      posted_date: '2023-06-25'
-    },
-    {
-      id: 6,
-      title: 'Marketing Specialist',
-      company: 'MarketMakers',
-      location: 'Chicago, IL',
-      salary: '$90,000',
-      description: 'Develop and execute marketing strategies.',
-      requirements: ['SEO', 'Content Marketing', 'Google Analytics'],
-      posted_date: '2023-05-15'
-    },
-    {
-      id: 7,
-      title: 'Sales Manager',
-      company: 'SalesForce',
-      location: 'Boston, MA',
-      salary: '$105,000',
-      description: 'Lead the sales team to achieve targets.',
-      requirements: ['Sales Management', 'CRM', 'Negotiation'],
-      posted_date: '2023-04-10'
-    },
-    {
-      id: 8,
-      title: 'HR Manager',
-      company: 'PeopleFirst',
-      location: 'Los Angeles, CA',
-      salary: '$95,000',
-      description: 'Manage HR operations and employee relations.',
-      requirements: ['HR Management', 'Recruitment', 'Employee Relations'],
-      posted_date: '2023-03-05'
-    },
-    {
-      id: 9,
-      title: 'Financial Analyst',
-      company: 'FinancePros',
-      location: 'Miami, FL',
-      salary: '$85,000',
-      description: 'Analyze financial data and create reports.',
-      requirements: ['Financial Analysis', 'Excel', 'Financial Modeling'],
-      posted_date: '2023-02-20'
-    },
-    {
-      id: 10,
-      title: 'Project Manager',
-      company: 'BuildIt',
-      location: 'Houston, TX',
-      salary: '$110,000',
-      description: 'Oversee construction projects from start to finish.',
-      requirements: ['Project Management', 'Construction', 'Budgeting'],
-      posted_date: '2023-01-15'
+      title: 'LeetCode Top Interview Questions',
+      description: 'A list of top interview questions on LeetCode.',
+      link: 'https://leetcode.com/problemset/top-interview-questions/',
+      type: 'LeetCode'
     }
   ];
