@@ -1,8 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import logo from "../assets/Designer__1_-removebg-preview (1).png";
+import { useAuth } from "../context/AuthContext";
 
 function Navbar() {
+
+  const { logout , isAuthenticated,role } = useAuth();
   return (
     <div className="navbar  bg-[#00757F] ">
       <div className="navbar-start">
@@ -25,21 +28,24 @@ function Navbar() {
           <ul
             tabIndex={0}
             className="menu menu-md dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
-              <li>
+              {!isAuthenticated && <li>
                 <Link to="/register">Register/Login</Link>
-              </li>
+              </li>}
             <li>
               <Link to='/'>Home</Link>
             </li>
             <li>
             <Link to='/jobs'>Jobs</Link>
             </li>
-            <li>
+            {(role==='ROLE_ADMIN' && isAuthenticated) &&<li>
             <Link to='/admin'>Admin</Link>
-            </li>
+            </li>}
             <li>
             <Link to='/practice'>Practice</Link>
           </li>
+          {isAuthenticated && <li>
+                <button onClick={logout}>Logout</button>
+              </li>}
           </ul>
         </div>
         <div className="h-auto w-12 text-white font-bold">
@@ -55,9 +61,9 @@ function Navbar() {
           <li>
           <Link to='/jobs'>Jobs</Link>
           </li>
-          <li>
+          {(role==='ROLE_ADMIN' && isAuthenticated) &&<li>
             <Link to='/admin'>Admin</Link>
-          </li>
+            </li>}
           <li>
             <Link to='/practice'>Practice</Link>
           </li>

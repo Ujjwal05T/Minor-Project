@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { Link , useNavigate} from 'react-router-dom';
+import { useAuth } from '../context/AuthContext';
 
 function Login() {
   const [formData, setFormData] = useState({
@@ -9,6 +10,8 @@ function Login() {
   });
 
   const [error, setError] = useState('');
+
+  const { login } = useAuth();
 
   const navigate = useNavigate();
 
@@ -25,7 +28,8 @@ function Login() {
     setError('');
     try {
       const response = await axios.post('http://localhost:8080/login', formData);
-      localStorage.setItem('token', response.data);
+      const token = response.data;
+      login(token);
       console.log(response.data)
       navigate('/');
       

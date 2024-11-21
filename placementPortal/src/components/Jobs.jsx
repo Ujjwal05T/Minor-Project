@@ -2,14 +2,14 @@ import React from 'react'
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { format } from 'date-fns';
-import useAuth from '../hooks/useAuth';
+import { useAuth } from '../context/AuthContext';
 
 
 function Jobs() {
   const [jobs, setJobs] = useState([]);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
-  const { isAuthenticated, token } = useAuth();
+  const { isAuthenticated, token} = useAuth();
 
   useEffect(() => {
     const fetchJobs = async () => {
@@ -20,7 +20,6 @@ function Jobs() {
           }
         });
         setJobs(response.data);
-        console.log(token)
         setLoading(false);
       } catch (error) {
         console.error('Error fetching jobs:', error);
@@ -31,6 +30,9 @@ function Jobs() {
 
     if (isAuthenticated) {
       fetchJobs();
+    }else {
+      setLoading(false);
+      setError('Please log in to view the contents of this page.');
     }
   }, [isAuthenticated, token]);
 

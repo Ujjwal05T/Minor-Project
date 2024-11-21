@@ -3,16 +3,19 @@ import { Link } from "react-router-dom";
 import img from "../assets/blog_1587144918.jpg";
 import {motion} from "framer-motion";
 import { recruiters } from "../index";
+import { useAuth } from "../context/AuthContext";
 
 
 function Home() {
 
+  const {isAuthenticated,logout} = useAuth()
+
   return (
     <>
       <div className="hidden md:block m-2 p-2">
-        <Link to="/register">
+        {!isAuthenticated?(<Link to="/register">
           <button className="btn">Register/Login</button>
-        </Link>
+        </Link>):(<button onClick={logout} className="btn">Logout</button>)}
       </div>
       <div className="text-center font-semibold text-2xl mt-6  space-x-4 relative md:-top-[70px]">
         <h1>Welcome to SOC Placement Portal</h1>

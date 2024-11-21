@@ -11,6 +11,7 @@ import Loading from './components/Loading'
 import AdminPanel from './components/AdminPanel'
 import Practice from './components/Practice'
 import ProtectedRoute from './components/ProtectedRoute'
+import { AuthProvider } from './context/AuthContext';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -28,6 +29,7 @@ function App() {
 
   return (
     <>
+    <AuthProvider>
     <Router>
       
       { loading ? <Loading /> : 
@@ -47,6 +49,7 @@ function App() {
       </>
       }
     </Router>
+    </AuthProvider>
     </>
   )
 }
