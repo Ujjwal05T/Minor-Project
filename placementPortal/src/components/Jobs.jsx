@@ -2,18 +2,25 @@ import React from 'react'
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { format } from 'date-fns';
+import useAuth from '../hooks/useAuth';
 
 
 function Jobs() {
   const [jobs, setJobs] = useState([]);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
+  const { isAuthenticated, token } = useAuth();
 
   useEffect(() => {
     const fetchJobs = async () => {
       try {
-        const response = await axios.get('http://localhost:8080/jobs');
+        const response = await axios.get('http://localhost:8080/jobs', {
+          headers: {
+            'Authorization': `Bearer ${token}`
+          }
+        });
         setJobs(response.data);
+        console.log(token)
         setLoading(false);
       } catch (error) {
         console.error('Error fetching jobs:', error);
@@ -22,8 +29,10 @@ function Jobs() {
       }
     };
 
-    fetchJobs();
-  }, []);
+    if (isAuthenticated) {
+      fetchJobs();
+    }
+  }, [isAuthenticated, token]);
 
   const formatDate = (dateString) => {
     const date = new Date(dateString);

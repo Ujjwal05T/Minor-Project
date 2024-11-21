@@ -25,7 +25,8 @@ function Login() {
     setError('');
     try {
       const response = await axios.post('http://localhost:8080/login', formData);
-      localStorage.setItem('token', response.data.jwt);
+      localStorage.setItem('token', response.data);
+      console.log(response.data)
       navigate('/');
       
     } catch (error) {
@@ -39,7 +40,8 @@ function Login() {
       <h2 className="text-2xl font-bold mb-6 text-center">Login</h2>
       <form onSubmit={handleSubmit} className="space-y-4 mx-3 ">
         <div>
-          <label className="block text-sm font-medium ">Email</label>
+          
+          <label className="block text-sm font-medium ">User Name</label>
           <input
             type="username"
             name="username"
