@@ -14,7 +14,7 @@ function Jobs() {
   useEffect(() => {
     const fetchJobs = async () => {
       try {
-        const response = await axios.get('http://localhost:8080/jobs', {
+        const response = await axios.get(`${import.meta.env.VITE_API_URL}/jobs`, {
           headers: {
             'Authorization': `Bearer ${token}`
           }

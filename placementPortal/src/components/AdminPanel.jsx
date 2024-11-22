@@ -28,7 +28,7 @@ function AdminPanel() {
     setError(null);
     setSuccess(null);
     try {
-      const response = await axios.post('http://localhost:8080/jobs', formData);
+      const response = await axios.post(`${import.meta.env.VITE_API_URL}/jobs`, formData);
       setJobs([...jobs, response.data]);
       setFormData({
         title: '',

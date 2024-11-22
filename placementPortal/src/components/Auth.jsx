@@ -12,7 +12,7 @@ function Auth() {
         email: '',
         password: '',
         // confirmPassword: '',
-        Role:'USER'
+        role:''
       });
     
       const handleChange = (e) => {
@@ -32,7 +32,7 @@ function Auth() {
         // }
         setError('');
         try {
-          const response = await axios.post('http://localhost:8080/register', formData);
+          const response = await axios.post(`${import.meta.env.VITE_API_URL}/register`, formData);
           console.log(response.data);
           navigate('/login');
         } catch (error) {
@@ -70,14 +70,13 @@ function Auth() {
           <label className="block text-sm font-medium ">Role</label>
           <select
             name="role"
-            value={formData.Role}
+            value={formData.role}
             onChange={handleChange}
             className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
             required
           >
             <option value="null">--</option>
             <option value="USER">User</option>
-            <option value="ADMIN">Admin</option>
           </select>
         </div>
         <div>

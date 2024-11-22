@@ -27,7 +27,8 @@ function Login() {
     e.preventDefault();
     setError('');
     try {
-      const response = await axios.post('http://localhost:8080/login', formData);
+      
+      const response = await axios.post(`${import.meta.env.VITE_API_URL}/login`, formData);
       const token = response.data;
       login(token);
       console.log(response.data)
