@@ -48,7 +48,7 @@ function Home() {
       <div>
         <div className="text-center mt-8">
             <h1 className="font-semibold text-2xl">Our Recruiters</h1>
-            <div className="flex flex-wrap justify-center md:justify-evenly font-semibold text-2xl mt-4 mb-16 space-x-4 space-y-6 mx-2 lg:mx-[100px] ">
+            <div className="sm:flex sm:flex-wrap grid grid-cols-2 gap-4 sm:justify-evenly font-semibold text-2xl mt-4 mb-16 md:space-x-4 space-y-6 mx-2 lg:mx-[100px] ">
               <div className="hidden">   
               </div>
             {recruiters.map((src, index) => (
